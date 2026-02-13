@@ -43,7 +43,7 @@ const Navbar = () => {
         ))}
       </nav>
       <button
-        className="rounded-lg bg-linear-to-r from-lime to-lime-dark px-6 py-2.5 font-semibold text-neutral-900 shadow-[0_6px_14px_rgba(182,243,90,0.4)] transition hover:brightness-95 hover:scale-110"
+        className="rounded-lg bg-linear-to-r from-lime to-lime-dark px-6 py-2.5 font-semibold text-neutral-900 shadow-lg transition hover:brightness-95 hover:scale-110"
         type="button"
       >
         Enquiry Now

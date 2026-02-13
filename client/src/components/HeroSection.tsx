@@ -1,35 +1,32 @@
 const HeroSection = () => {
   return (
-    <section
-      id="home"
-      className="relative bg-sand px-5 pb-20 pt-10 sm:px-10 lg:px-14"
-    >
-      <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[1.05fr_0.95fr]">
-        <div className="overflow-hidden rounded-[28px] bg-white shadow-[0_20px_40px_rgba(0,0,0,0.08)]">
-          <div className="px-7 pt-8 text-center sm:px-10">
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-gold">
+    <section id="home" className="relative bg-white">
+      <div className="mx-auto grid lg:grid-cols-2">
+        <div className="overflow-hidden bg-white ">
+          <div className="px-7 pt-24 text-center sm:px-10">
+            <p className="text-3xl font-semibold uppercase tracking-[0.25em] text-gold">
               Thinking
             </p>
-            <h1 className="mt-3 font-display text-[1.7rem] font-semibold uppercase text-ink sm:text-[2.1rem]">
+            <h1 className="-mt-3 font-display text-[1.7rem] font-semibold uppercase text-ink sm:text-[2.1rem]">
               Of a <span className="text-crimson">Fantastic Vicinity</span>?
             </h1>
-            <div className="mt-3 flex flex-wrap items-center justify-center gap-3 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-ink-soft">
+            <div className="mt-1 flex flex-wrap items-center justify-center gap-3 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-ink-soft">
               <span>20+ Podium Luxurious Amenities</span>
               <span className="hidden h-3 w-px bg-muted/40 sm:inline-block" />
               <span>Spacious Balcony Homes*</span>
             </div>
           </div>
           <div className="relative mt-6">
+            <div className="absolute top-0 left-0 h-14 w-full bg-linear-to-b from-white via-sand/80 to-transparent" />
             <img
-              className="h-[320px] w-full object-cover sm:h-[380px]"
-              src="/hero-building.jpg"
+              className="h-110 w-full object-cover "
+              src="/about-main.jpg"
               alt="Aerial view of the residential project"
             />
-            <div className="absolute bottom-0 left-0 h-14 w-full bg-gradient-to-t from-sand via-sand/80 to-transparent" />
           </div>
         </div>
 
-        <div className="flex flex-col justify-center rounded-[28px] bg-white px-6 py-10 text-center shadow-[0_20px_40px_rgba(0,0,0,0.08)] sm:px-10">
+        <div className="flex flex-col justify-center bg-white px-6 py-10 text-center  sm:px-10">
           <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-forest/30">
             <svg
               className="h-9 w-9 text-forest"
@@ -55,10 +52,10 @@ const HeroSection = () => {
               />
             </svg>
           </div>
-          <p className="mt-5 font-display text-xs uppercase tracking-[0.3em] text-muted">
+          <p className="mt-5 font-display text-xs uppercase tracking-[0.3em] text-inkz">
             Vighnaharta
           </p>
-          <h2 className="mt-2 font-display text-4xl font-semibold tracking-[0.2em] text-ink">
+          <h2 className="mt-2 font-display text-4xl font-semibold tracking-[0.2em] uppercase text-ink">
             Infinity
           </h2>
           <div className="mt-5 flex items-center justify-center gap-3 text-muted">
@@ -154,15 +151,14 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-
       <svg
         className="absolute bottom-0 left-0 w-full"
-        viewBox="0 0 1440 120"
+        viewBox="0 0 1440 60"
         fill="none"
         preserveAspectRatio="none"
       >
         <path
-          d="M0 80C240 120 480 120 720 90C960 60 1200 20 1440 30V120H0V80Z"
+          d="M0 0 Q720 60 1440 0 L1440 60 L0 60 Z"
           fill="var(--color-mint, #eaf7f3)"
         />
       </svg>
