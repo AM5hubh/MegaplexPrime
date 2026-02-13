@@ -1,0 +1,32 @@
+{
+  "name": "real-estate-app-server",
+  "version": "1.0.0",
+  "description": "Backend server for the real estate application",
+  "main": "src/app.ts",
+  "scripts": {
+    "start": "ts-node src/app.ts",
+    "dev": "ts-node-dev src/app.ts",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.4.4",
+    "ts-node": "^10.4.0",
+    "ts-node-dev": "^1.1.8",
+    "@types/express": "^4.17.13",
+    "@types/node": "^16.11.7"
+  },
+  "keywords": [
+    "real-estate",
+    "backend",
+    "express",
+    "typescript"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
