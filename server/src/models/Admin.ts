@@ -23,4 +23,5 @@ const AdminSchema = new mongoose.Schema(
   },
 );
 
-export default mongoose.model("Admin", AdminSchema);
+// @ts-ignore - Mongoose type instantiation issue
+export default mongoose.model("Admin", AdminSchema) as any;

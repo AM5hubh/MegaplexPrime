@@ -2,35 +2,46 @@ import mongoose from "mongoose";
 
 export interface IContent {
   heroSection: {
-    title: string;
-    subtitle: string;
-    pricingTitle: string;
-    location: string;
+    heading: string;
+    subheading: string;
+    price: string;
+    priceLabel: string;
+    priceUnit: string;
+    highlights: string[];
   };
   projectSection: {
-    title: string;
+    heading: string;
     description: string;
-    brochureText: string;
   };
   amenitiesSection: {
-    title: string;
-    subtitle: string;
-    viewMoreText: string;
+    heading: string;
+    amenities: Array<{
+      name: string;
+      icon: string;
+    }>;
   };
   nearbySection: {
-    title: string;
+    heading: string;
+    locations: Array<{
+      name: string;
+      distance: string;
+    }>;
   };
   aboutSection: {
-    title: string;
-    content: string;
+    heading: string;
+    description: string;
   };
   constructionSection: {
-    title: string;
-    updateLabel: string;
+    heading: string;
+    updates: Array<{
+      title: string;
+      description: string;
+      date: string;
+    }>;
   };
   faqSection: {
-    title: string;
-    questions: Array<{
+    heading: string;
+    faqs: Array<{
       question: string;
       answer: string;
     }>;
@@ -40,35 +51,52 @@ export interface IContent {
 const ContentSchema = new mongoose.Schema(
   {
     heroSection: {
-      title: { type: String, required: true },
-      subtitle: { type: String, required: true },
-      pricingTitle: { type: String, required: true },
-      location: { type: String, required: true },
+      heading: { type: String, required: true },
+      subheading: { type: String, required: true },
+      price: { type: String, required: true },
+      priceLabel: { type: String, required: true },
+      priceUnit: { type: String, required: true },
+      highlights: [{ type: String }],
     },
     projectSection: {
-      title: { type: String, required: true },
+      heading: { type: String, required: true },
       description: { type: String, required: true },
-      brochureText: { type: String, required: true },
     },
     amenitiesSection: {
-      title: { type: String, required: true },
-      subtitle: { type: String, required: true },
-      viewMoreText: { type: String, required: true },
+      heading: { type: String, required: true },
+      amenities: [
+        {
+          name: { type: String, required: true },
+          icon: { type: String, required: true },
+        },
+      ],
     },
     nearbySection: {
-      title: { type: String, required: true },
+      heading: { type: String, required: true },
+      locations: [
+        {
+          name: { type: String, required: true },
+          distance: { type: String, required: true },
+        },
+      ],
     },
     aboutSection: {
-      title: { type: String, required: true },
-      content: { type: String, required: true },
+      heading: { type: String, required: true },
+      description: { type: String, required: true },
     },
     constructionSection: {
-      title: { type: String, required: true },
-      updateLabel: { type: String, required: true },
+      heading: { type: String, required: true },
+      updates: [
+        {
+          title: { type: String, required: true },
+          description: { type: String, required: true },
+          date: { type: String, required: true },
+        },
+      ],
     },
     faqSection: {
-      title: { type: String, required: true },
-      questions: [
+      heading: { type: String, required: true },
+      faqs: [
         {
           question: { type: String, required: true },
           answer: { type: String, required: true },
@@ -81,4 +109,5 @@ const ContentSchema = new mongoose.Schema(
   },
 );
 
-export default mongoose.model("Content", ContentSchema);
+// @ts-ignore - Mongoose type instantiation issue
+export default mongoose.model("Content", ContentSchema) as any;

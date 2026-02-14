@@ -1,12 +1,12 @@
 const Navbar = () => {
   const navlink = [
-    { name: "Home", href: "#home" },
-    { name: "Overview", href: "#overview" },
-    { name: "Connectivities", href: "#connectivities" },
-    { name: "Amenities", href: "#amenities" },
-    { name: "Floor Plans", href: "#floor-plans" },
-    { name: "Developer", href: "#developer" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/#home" },
+    { name: "Overview", href: "/#overview" },
+    { name: "Connectivities", href: "/#connectivities" },
+    { name: "Amenities", href: "/#amenities" },
+    { name: "Floor Plans", href: "/#floor-plans" },
+    { name: "Developer", href: "/#developer" },
+    { name: "Contact", href: "/#contact" },
   ];
   return (
     <header className="sticky top-0 z-20 flex flex-wrap items-center justify-between gap-6 bg-white px-5 py-4 shadow-[0_8px_18px_rgba(0,0,0,0.06)] sm:px-10 lg:flex-nowrap lg:px-12">
@@ -45,6 +45,7 @@ const Navbar = () => {
       <button
         className="rounded-lg bg-linear-to-r from-lime to-lime-dark px-6 py-2.5 font-semibold text-neutral-900 shadow-lg transition hover:brightness-95 hover:scale-110"
         type="button"
+        onClick={() => (window.location.href = "/admin/login")}
       >
         Enquiry Now
       </button>

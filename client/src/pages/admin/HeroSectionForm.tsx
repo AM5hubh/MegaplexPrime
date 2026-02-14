@@ -74,128 +74,181 @@ export const HeroSectionForm: React.FC = () => {
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-sm p-6">
-      <h2 className="text-2xl font-bold text-gray-900 mb-6">
-        Edit Hero Section
-      </h2>
-
-      {error && (
-        <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6 flex items-start gap-3">
-          <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
-          <p className="text-sm text-red-700">{error}</p>
+    <div className="space-y-6">
+      {/* Current Content Preview */}
+      <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-200">
+        <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+          <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+          Current Content on Website
+        </h3>
+        <div className="space-y-3 text-sm">
+          <div className="bg-white/70 rounded-lg p-4">
+            <p className="text-gray-600 font-medium mb-1">Heading:</p>
+            <p className="text-gray-900 text-lg font-bold">
+              {formData.heading || "Not set"}
+            </p>
+          </div>
+          <div className="bg-white/70 rounded-lg p-4">
+            <p className="text-gray-600 font-medium mb-1">Subheading:</p>
+            <p className="text-gray-900">{formData.subheading || "Not set"}</p>
+          </div>
+          <div className="bg-white/70 rounded-lg p-4 grid grid-cols-3 gap-4">
+            <div>
+              <p className="text-gray-600 font-medium mb-1">Price:</p>
+              <p className="text-gray-900 font-semibold">
+                {formData.price || "Not set"}
+              </p>
+            </div>
+            <div>
+              <p className="text-gray-600 font-medium mb-1">Price Label:</p>
+              <p className="text-gray-900">
+                {formData.priceLabel || "Not set"}
+              </p>
+            </div>
+            <div>
+              <p className="text-gray-600 font-medium mb-1">Price Unit:</p>
+              <p className="text-gray-900">{formData.priceUnit || "Not set"}</p>
+            </div>
+          </div>
+          <div className="bg-white/70 rounded-lg p-4">
+            <p className="text-gray-600 font-medium mb-2">Highlights:</p>
+            <ul className="list-disc list-inside space-y-1 text-gray-900">
+              {formData.highlights?.map((item, idx) => (
+                <li key={idx}>{item || "(empty)"}</li>
+              ))}
+            </ul>
+          </div>
         </div>
-      )}
+      </div>
 
-      {success && (
-        <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6 flex items-start gap-3">
-          <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-          <p className="text-sm text-green-700">Changes saved successfully!</p>
-        </div>
-      )}
+      {/* Edit Form */}
+      <div className="bg-white rounded-xl shadow-sm p-6">
+        <h2 className="text-2xl font-bold text-gray-900 mb-6">
+          Edit Hero Section
+        </h2>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Main Heading
-          </label>
-          <input
-            placeholder="Enter main heading"
-            type="text"
-            value={formData.heading}
-            onChange={(e) => handleInputChange("heading", e.target.value)}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lime-500 focus:border-transparent outline-none transition"
-            required
-          />
-        </div>
+        {error && (
+          <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6 flex items-start gap-3">
+            <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
+            <p className="text-sm text-red-700">{error}</p>
+          </div>
+        )}
 
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Subheading
-          </label>
-          <input
-            placeholder="Enter subheading"
-            type="text"
-            value={formData.subheading}
-            onChange={(e) => handleInputChange("subheading", e.target.value)}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lime-500 focus:border-transparent outline-none transition"
-            required
-          />
-        </div>
+        {success && (
+          <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6 flex items-start gap-3">
+            <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+            <p className="text-sm text-green-700">
+              Changes saved successfully!
+            </p>
+          </div>
+        )}
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Price
+              Main Heading
             </label>
             <input
+              placeholder="Enter main heading"
               type="text"
-              value={formData.price}
-              onChange={(e) => handleInputChange("price", e.target.value)}
+              value={formData.heading}
+              onChange={(e) => handleInputChange("heading", e.target.value)}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lime-500 focus:border-transparent outline-none transition"
-              placeholder="70L"
               required
             />
           </div>
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Price Label
+              Subheading
             </label>
             <input
+              placeholder="Enter subheading"
               type="text"
-              value={formData.priceLabel}
-              onChange={(e) => handleInputChange("priceLabel", e.target.value)}
+              value={formData.subheading}
+              onChange={(e) => handleInputChange("subheading", e.target.value)}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lime-500 focus:border-transparent outline-none transition"
-              placeholder="Starting Price"
               required
             />
           </div>
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Price Unit
-            </label>
-            <input
-              type="text"
-              value={formData.priceUnit}
-              onChange={(e) => handleInputChange("priceUnit", e.target.value)}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lime-500 focus:border-transparent outline-none transition"
-              placeholder="Onwards"
-              required
-            />
-          </div>
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Highlights (3 items)
-          </label>
-          <div className="space-y-3">
-            {formData.highlights.map((highlight, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Price
+              </label>
               <input
-                key={index}
                 type="text"
-                value={highlight}
-                onChange={(e) => handleHighlightChange(index, e.target.value)}
+                value={formData.price}
+                onChange={(e) => handleInputChange("price", e.target.value)}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lime-500 focus:border-transparent outline-none transition"
-                placeholder={`Highlight ${index + 1}`}
+                placeholder="70L"
                 required
               />
-            ))}
-          </div>
-        </div>
+            </div>
 
-        <div className="flex justify-end">
-          <button
-            type="submit"
-            disabled={saving}
-            className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-lime-500 to-lime-600 text-white font-semibold rounded-lg hover:from-lime-600 hover:to-lime-700 focus:ring-4 focus:ring-lime-500/50 transition disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            <Save className="w-5 h-5" />
-            {saving ? "Saving..." : "Save Changes"}
-          </button>
-        </div>
-      </form>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Price Label
+              </label>
+              <input
+                type="text"
+                value={formData.priceLabel}
+                onChange={(e) =>
+                  handleInputChange("priceLabel", e.target.value)
+                }
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lime-500 focus:border-transparent outline-none transition"
+                placeholder="Starting Price"
+                required
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Price Unit
+              </label>
+              <input
+                type="text"
+                value={formData.priceUnit}
+                onChange={(e) => handleInputChange("priceUnit", e.target.value)}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lime-500 focus:border-transparent outline-none transition"
+                placeholder="Onwards"
+                required
+              />
+            </div>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Highlights (3 items)
+            </label>
+            <div className="space-y-3">
+              {formData.highlights.map((highlight, index) => (
+                <input
+                  key={index}
+                  type="text"
+                  value={highlight}
+                  onChange={(e) => handleHighlightChange(index, e.target.value)}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lime-500 focus:border-transparent outline-none transition"
+                  placeholder={`Highlight ${index + 1}`}
+                  required
+                />
+              ))}
+            </div>
+          </div>
+
+          <div className="flex justify-end">
+            <button
+              type="submit"
+              disabled={saving}
+              className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-lime-500 to-lime-600 text-white font-semibold rounded-lg hover:from-lime-600 hover:to-lime-700 focus:ring-4 focus:ring-lime-500/50 transition disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <Save className="w-5 h-5" />
+              {saving ? "Saving..." : "Save Changes"}
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

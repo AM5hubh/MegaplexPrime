@@ -3,11 +3,11 @@ import { AuthProvider } from "./contexts/AuthContext";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 
 // Public website pages
-import HeroSection from "./components/HeroSection";
-import ProjectSection from "./components/ProjectSection";
-import AmenitiesSection from "./components/AmenitiesSection";
-import NearbySection from "./components/NearbySection";
-
+import HeroSection from "./components/Home/HeroSection";
+import ProjectSection from "./components/Home/ProjectSection";
+import AmenitiesSection from "./components/Home/AmenitiesSection";
+import NearbySection from "./components/Home/NearbySection";
+import ScrollTop from "./components/Common/ScrollTop";
 // Admin pages
 import { Login } from "./pages/admin/Login";
 import { Dashboard } from "./pages/admin/Dashboard";
@@ -28,6 +28,7 @@ function Website() {
       <ProjectSection />
       <AmenitiesSection />
       <NearbySection />
+      <ScrollTop />
     </div>
   );
 }
