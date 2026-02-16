@@ -5,11 +5,13 @@ export const content = {
   },
   projectOverview: {
     title: "Project Overview",
-    description: "Our real estate project offers a variety of homes and apartments tailored to your needs.",
+    description:
+      "Our real estate project offers a variety of homes and apartments tailored to your needs.",
   },
   nearbyConnectivity: {
     title: "Nearby Connectivity",
-    description: "Conveniently located near schools, hospitals, and shopping centers.",
+    description:
+      "Conveniently located near schools, hospitals, and shopping centers.",
   },
   amenities: [
     {
@@ -40,11 +42,13 @@ export const content = {
   faq: [
     {
       question: "What is the process of buying a property?",
-      answer: "The process includes finding a property, securing financing, and closing the deal.",
+      answer:
+        "The process includes finding a property, securing financing, and closing the deal.",
     },
     {
       question: "Are there any additional fees?",
-      answer: "Yes, there may be closing costs, inspection fees, and other associated costs.",
+      answer:
+        "Yes, there may be closing costs, inspection fees, and other associated costs.",
     },
   ],
 };
