@@ -207,7 +207,7 @@ export const NearbySectionForm: React.FC = () => {
                     onClick={() => removeLocation(index)}
                     className="p-2 text-red-600 hover:bg-red-50 rounded-lg transition"
                   >
-                    <Trash2 className="w-5 h-5" />
+                    {<Trash2 className="w-5 h-5" />}
                   </button>
                 </div>
               ))}

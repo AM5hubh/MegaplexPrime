@@ -1,15 +1,15 @@
 const Navbar = () => {
   const navlink = [
-    { name: "Home", href: "/" },
+    { name: "Home", href: "/#" },
     { name: "Overview", href: "/#overview" },
-    { name: "Connectivities", href: "/#connectivities" },
+    { name: "Connectivities", href: "/#nearby" },
     { name: "Amenities", href: "/#amenities" },
     { name: "Floor Plans", href: "/#floor-plans" },
     { name: "Developer", href: "/#developer" },
     { name: "Contact", href: "/#contact" },
   ];
   return (
-    <header className="sticky top-0 z-20 flex flex-wrap items-center justify-between gap-6 bg-white px-5 py-4 shadow-[0_8px_18px_rgba(0,0,0,0.06)] sm:px-10 lg:flex-nowrap lg:px-12">
+    <header className="sticky top-0  z-100 flex flex-wrap items-center justify-between gap-6 bg-white px-5 py-4 shadow-[0_8px_18px_rgba(0,0,0,0.06)] sm:px-10 lg:flex-nowrap lg:px-12">
       <div className="flex items-center gap-3">
         <div
           className="relative grid h-11 w-11 place-items-center rounded-full bg-lime-soft"

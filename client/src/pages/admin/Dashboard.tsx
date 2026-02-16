@@ -128,7 +128,7 @@ export const Dashboard: React.FC = () => {
               onClick={() => setSidebarOpen(true)}
               className="lg:hidden text-gray-600 hover:text-gray-900"
             >
-              <Menu className="w-6 h-6" />
+              {<Menu className="w-6 h-6" />}
             </button>
             <h1 className="text-2xl font-bold text-gray-900">
               {navigationItems.find((item) => item.path === location.pathname)

@@ -22,7 +22,7 @@ export const AmenitiesSectionForm: React.FC = () => {
       const content = await contentService.getContent();
       setFormData(content.amenitiesSection);
     } catch (err: any) {
-      setError("Failed to load content");
+      setError("Failed to load content: " + err.message);
     } finally {
       setLoading(false);
     }
@@ -203,7 +203,7 @@ export const AmenitiesSectionForm: React.FC = () => {
                     onClick={() => removeAmenity(index)}
                     className="p-2 text-red-600 hover:bg-red-50 rounded-lg transition"
                   >
-                    <Trash2 className="w-5 h-5" />
+                    {<Trash2 className="w-5 h-5" />}
                   </button>
                 </div>
               ))}

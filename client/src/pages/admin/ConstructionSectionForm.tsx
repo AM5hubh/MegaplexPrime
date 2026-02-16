@@ -192,7 +192,7 @@ export const ConstructionSectionForm: React.FC = () => {
                       onClick={() => removeUpdate(index)}
                       className="p-1 text-red-600 hover:bg-red-50 rounded transition"
                     >
-                      <Trash2 className="w-4 h-4" />
+                      {<Trash2 className="w-4 h-4" />}
                     </button>
                   </div>
                   <input
